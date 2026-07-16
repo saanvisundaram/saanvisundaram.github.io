@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> evolve | Saanvi Sundaram</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+
+        .post-cover{
+            width:100%;
+            height:420px;
+            object-fit:cover;
+            border-radius:16px;
+            margin-bottom:50px;
+        }
+
+        .post-subtitle{
+            color:var(--green-dark);
+            font-size:1.15rem;
+            margin-top:-10px;
+            margin-bottom:30px;
+        }
+
+        .post-meta{
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+            align-items:center;
+            color:var(--green-mid);
+            font-size:.9rem;
+            margin-bottom:20px;
+        }
+
+        .tags{
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+            margin-bottom:60px;
+        }
+
+        .tag{
+            padding:6px 12px;
+            border-radius:999px;
+            border:1px solid var(--green-light);
+            background:var(--soft);
+            color:var(--green-mid);
+            font-size:.8rem;
+        }
+
+        .blog-post{
+            max-width:850px;
+            margin:auto;
+        }
+
+        .blog-post h2{
+            font-family:'Space Grotesk', sans-serif;
+            margin-top:60px;
+            margin-bottom:20px;
+            color:var(--text);
+        }
+
+        .blog-post p{
+            margin-bottom:25px;
+            line-height:1.9;
+        }
+
+        .blog-post img{
+            width:100%;
+            border-radius:14px;
+            margin:40px 0;
+        }
+
+        .blog-post blockquote{
+            border-left:4px solid var(--green-dark);
+            padding-left:20px;
+            margin:40px 0;
+            color:var(--green-mid);
+            font-style:italic;
+        }
+
+        .post-navigation{
+            display:flex;
+            justify-content:space-between;
+            flex-wrap:wrap;
+            margin-top:80px;
+            padding-top:40px;
+            border-top:1px dashed var(--green-light);
+        }
+
+        .post-navigation a{
+            color:var(--green-dark);
+            text-decoration:none;
+            transition:.3s;
+        }
+
+        .post-navigation a:hover{
+            color:white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+        <div class="nav-right">
+            <a href="../pursuits.html">← pursuits</a>
+            <a href="../blog.html">blog</a>
+        </div>
+    </nav>
+
+
+    <!-- Cover Image -->
+
+    <img
+        src="../assets/flowers.jpg"
+        alt="Cover Image"
+        class="post-cover">
+
+
+    <!-- Title -->
+
+    <h1>evolve</h1>
+
+    <!-- <div class="post-subtitle">
+        
+    </div> -->
+
+
+    <!-- Meta -->
+
+    <div class="post-meta">
+
+        <span>Published July 10, 2026</span>
+
+        <span>•</span>
+
+        <span id="reading-time"></span>
+
+    </div>
+
+
+    <!-- Tags -->
+
+    <div class="tags">
+
+        <span class="tag">Writing</span>
+
+        <span class="tag">Life</span>
+
+    </div>
+
+
+
+    <!-- ARTICLE -->
+
+    <article class="blog-post">
+
+        we were twelve when the future revealed itself <br>
+        what do you want to be? life asked questions <br>
+        we could not answer, mere children so naive. <br> <br>
+
+        passion and desires we all we knew, our world <br>
+        so small and round. our mind flitting to dreams <br>
+        so big that our feet left the ground. <br> <br>
+
+        sometimes our mouths ran loose; words came out <br>
+        we didn't mean. feelings were hurt, mistakes <br>
+        were made, but nothing that couldn't be mended <br>
+        by an ardent apology. <br> <br>
+
+        look where we've come, from where we began, <br>
+        with broomsticks for swords and buckets for hats; <br>
+        we thank the world for all that it did, and promise <br>
+        that we will give back. <br> <br>
+
+        and maybe we've done whatever we could, to <br>
+        live life to it's best. bones grow older day <br>
+        after day, and soon we're laid down to rest. <br>
+
+
+    </article>
+
+
+
+    <!-- Bottom Navigation -->
+
+    <div class="post-navigation">
+
+        <a href="previous-post.html">
+            ← Previous Post
+        </a>
+
+        <a href="../blog.html">
+            Back to Blog
+        </a>
+
+        <a href="next-post.html">
+            Next Post →
+        </a>
+
+    </div>
+
+
+
+    <div class="page-quote">
+        “You can’t edit a blank page.” – Jodi Picoult
+    </div>
+
+
+    <hr class="section-divider">
+
+
+    <footer class="portfolio-footer">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/yourusername" target="_blank">Instagram</a>
+            <a href="mailto:your.email@example.com">Email Me</a>
+        </div>
+
+        <p class="footer-credit">
+            &copy; 2026 Saanvi Sundaram
+        </p>
+    </footer>
+
+</div>
+
+
+
+<script>
+
+const article = document.querySelector(".blog-post");
+
+const words = article.innerText.trim().split(/\s+/).length;
+
+const minutes = Math.max(1, Math.ceil(words / 200));
+
+document.getElementById("reading-time").textContent =
+`${minutes} minute read`;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Title | Saanvi Sundaram</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+
+        .post-cover{
+            width:100%;
+            height:420px;
+            object-fit:cover;
+            border-radius:16px;
+            margin-bottom:50px;
+        }
+
+        .post-subtitle{
+            color:var(--green-dark);
+            font-size:1.15rem;
+            margin-top:-10px;
+            margin-bottom:30px;
+        }
+
+        .post-meta{
+            display:flex;
+            gap:15px;
+            flex-wrap:wrap;
+            align-items:center;
+            color:var(--green-mid);
+            font-size:.9rem;
+            margin-bottom:20px;
+        }
+
+        .tags{
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+            margin-bottom:60px;
+        }
+
+        .tag{
+            padding:6px 12px;
+            border-radius:999px;
+            border:1px solid var(--green-light);
+            background:var(--soft);
+            color:var(--green-mid);
+            font-size:.8rem;
+        }
+
+        .blog-post{
+            max-width:850px;
+            margin:auto;
+        }
+
+        .blog-post h2{
+            font-family:'Space Grotesk', sans-serif;
+            margin-top:60px;
+            margin-bottom:20px;
+            color:var(--text);
+        }
+
+        .blog-post p{
+            margin-bottom:25px;
+            line-height:1.9;
+        }
+
+        .blog-post img{
+            width:100%;
+            border-radius:14px;
+            margin:40px 0;
+        }
+
+        .blog-post blockquote{
+            border-left:4px solid var(--green-dark);
+            padding-left:20px;
+            margin:40px 0;
+            color:var(--green-mid);
+            font-style:italic;
+        }
+
+        .post-navigation{
+            display:flex;
+            justify-content:space-between;
+            flex-wrap:wrap;
+            margin-top:80px;
+            padding-top:40px;
+            border-top:1px dashed var(--green-light);
+        }
+
+        .post-navigation a{
+            color:var(--green-dark);
+            text-decoration:none;
+            transition:.3s;
+        }
+
+        .post-navigation a:hover{
+            color:white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+        <div class="nav-right">
+            <a href="../pursuits.html">← pursuits</a>
+            <a href="../blog.html">blog</a>
+        </div>
+    </nav>
+
+
+    <!-- Cover Image -->
+
+    <img
+        src="../assets/post-cover.jpg"
+        alt="Cover Image"
+        class="post-cover">
+
+
+    <!-- Title -->
+
+    <h1>Post Title Goes Here</h1>
+
+    <div class="post-subtitle">
+        One sentence that introduces the idea behind this post.
+    </div>
+
+
+    <!-- Meta -->
+
+    <div class="post-meta">
+
+        <span>Published July 10, 2026</span>
+
+        <span>•</span>
+
+        <span id="reading-time"></span>
+
+    </div>
+
+
+    <!-- Tags -->
+
+    <div class="tags">
+
+        <span class="tag">Neuroscience</span>
+
+        <span class="tag">Psychology</span>
+
+        <span class="tag">Film</span>
+
+    </div>
+
+
+
+    <!-- ARTICLE -->
+
+    <article class="blog-post">
+
+        <p>
+            Some ideas begin as class notes, some begin as conversations, and a few simply refuse to leave me alone. This is one of those ideas.
+        </p>
+
+
+        <h2>First Heading</h2>
+
+        <p>
+            Replace this paragraph with your writing. Since your website already has a reflective tone, I'd recommend writing these posts more like essays than traditional blog entries. Don't be afraid to mix research, personal experience, and questions that don't have neat answers.
+        </p>
+
+        <p>
+            A second paragraph continues the discussion. The automatic reading time below only counts the text inside this article, so you never have to update it manually.
+        </p>
+
+
+        <img
+            src="../assets/example-image.jpg"
+            alt="Example Image">
+
+
+        <blockquote>
+            "Replace this with a quote, lyric, or passage that inspired this post."
+        </blockquote>
+
+
+        <h2>Another Section</h2>
+
+        <p>
+            Continue writing here. Images, headings, and blockquotes can be mixed however you'd like.
+        </p>
+
+        <p>
+            The goal is to make each page feel like a finished essay rather than a collection of notes.
+        </p>
+
+
+        <h2>Closing Thoughts</h2>
+
+        <p>
+            End with something that leaves the reader thinking—a question, an observation, or a connection back to the beginning.
+        </p>
+
+    </article>
+
+
+
+    <!-- Bottom Navigation -->
+
+    <div class="post-navigation">
+
+        <a href="previous-post.html">
+            ← Previous Post
+        </a>
+
+        <a href="../blog.html">
+            Back to Blog
+        </a>
+
+        <a href="next-post.html">
+            Next Post →
+        </a>
+
+    </div>
+
+
+
+    <div class="page-quote">
+        “Writing is the painting of the voice.” — Voltaire
+    </div>
+
+
+    <hr class="section-divider">
+
+
+    <footer class="portfolio-footer">
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/yourusername" target="_blank">Instagram</a>
+            <a href="mailto:your.email@example.com">Email Me</a>
+        </div>
+
+        <p class="footer-credit">
+            &copy; 2026 Saanvi Sundaram
+        </p>
+    </footer>
+
+</div>
+
+
+
+<script>
+
+const article = document.querySelector(".blog-post");
+
+const words = article.innerText.trim().split(/\s+/).length;
+
+const minutes = Math.max(1, Math.ceil(words / 200));
+
+document.getElementById("reading-time").textContent =
+`${minutes} minute read`;
+
+</script>
+
+</body>
+</html>
