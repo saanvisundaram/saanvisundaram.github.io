@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saanvi Sundaram - Blog</title>
+  <!-- CSS LINK -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Subtle custom blog utilities utilizing your global color tokens */
+    .blog-list {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+    .blog-post-row {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+      border-bottom: 1px dashed var(--green-light);
+    }
+    .blog-date {
+      font-family: 'Space Mono', monospace;
+      color: var(--green-mid);
+      font-size: 0.95rem;
+      padding-top: 4px;
+    }
+    .blog-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .blog-title:hover {
+      color: var(--green-dark);
+    }
+    .blog-meta {
+      display: flex;
+      gap: 15px;
+      font-size: 0.85rem;
+      color: var(--green-dark);
+      margin-bottom: 12px;
+      font-family: 'Space Mono', monospace;
+    }
+    .blog-snippet {
+      color: var(--grey);
+      max-width: 800px;
+      line-height: 1.7;
+    }
+
+    .filter-section{
+      margin-top:50px;
+      margin-bottom:60px;
+
+    }
+
+    .filter-label{
+      display:block;
+      margin-bottom:18px;
+      font-family:'Space Grotesk',sans-serif;
+      font-weight:700;
+      color:var(--text);
+
+    }
+
+    .filter-buttons{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .filter-btn{
+      padding:8px 18px;
+      border-radius:999px;
+      border:1px solid var(--green-light);
+      background:var(--soft);
+      color:var(--green-mid);
+      font-family:'Space Mono',monospace;
+      cursor:pointer;
+      transition:.3s;
+    }
+
+    .filter-btn:hover{
+      background:var(--green-light);
+      color:white;
+    }
+
+    .filter-btn.active{
+      background:var(--green-dark);
+      color:var(--bg-gradient-bottom);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+    <nav class="navbar">
+      <div class="nav-right">
+        <a href="website.html">about me</a>
+        <a href="pursuits.html">pursuits</a>
+        <a href="contact.html">contact</a>
+      </div>
+    </nav>
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+    <h1>The Log</h1>
+
+<div class="subtitle">
+    Essays, reflections, projects, and things worth remembering.
+</div>
+
+<div class="filter-section">
+
+    <span class="filter-label">Browse by Topic</span>
+
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="neuroscience">Neuroscience</button>
+        <button class="filter-btn" data-filter="psychology">Psychology</button>
+        <button class="filter-btn" data-filter="programming">Programming</button>
+        <button class="filter-btn" data-filter="film&tv">Film & TV</button>
+        <button class="filter-btn" data-filter="books">Books</button>
+        <button class="filter-btn" data-filter="music">Music</button>
+        <button class="filter-btn" data-filter="writing">Writing</button>
+        <button class="filter-btn" data-filter="life">Life</button>
+    </div>
+</div>
+
+    <!-- =========================
+         BLOG POSTS LIST
+    ========================== -->
+    <div class="blog-list">
+
+      <!-- Post 1 -->
+      <div 
+       class="blog-post-row"
+       data-tags="writing life film&tv">
+        <div class="blog-date">July 2026</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span>Read Time: 6 min</span>
+            <span>•</span>
+            <span style="color: var(--green-mid);">#writing #life #film & tv</span>
+          </div>
+          <a
+           href="posts/elle_woods.html"
+           class="blog-title">Elle Woods & The Immediate Duality</a>
+          <p class="blog-snippet">
+            On moving and feeling like a 100-year-old baby everytime.
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div 
+       class="blog-post-row"
+       data-tags="writing life">
+        <div class="blog-date">July 2026</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span>Read Time: 2 min</span>
+            <span>•</span>
+            <span style="color: var(--green-mid);">#writing #life</span>
+          </div>
+          <a
+           href="posts/almost_idyllic.html"
+           class="blog-title">Almost Idyllic</a>
+          <p class="blog-snippet">
+            Poetry
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div 
+       class="blog-post-row"
+       data-tags="writing life">
+        <div class="blog-date">July 2026</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span>Read Time: 1 min</span>
+            <span>•</span>
+            <span style="color: var(--green-mid);">#writing #life</span>
+          </div>
+          <a
+           href="posts/cycles.html"
+           class="blog-title">cycles</a>
+          <p class="blog-snippet">
+            Poetry
+        </div>
+      </div>
+
+      <!-- Post 4 -->
+      <div 
+       class="blog-post-row"
+       data-tags="writing life">
+        <div class="blog-date">July 2026</div>
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span>Read Time: 1 min</span>
+            <span>•</span>
+            <span style="color: var(--green-mid);">#writing #life</span>
+          </div>
+          <a
+           href="posts/evolve.html"
+           class="blog-title">evolve</a>
+          <p class="blog-snippet">
+            Poetry
+        </div>
+      </div>
+
+    
+
+    </div>
+
+    <!-- =========================
+         PAGE QUOTE
+    ========================== -->
+    <div class="page-quote">
+      “Writing is utter solitude, the descent into the cold abyss of oneself.” - Franz Kafka
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- =========================
+         PORTFOLIO FOOTER
+    ========================== -->
+    <footer class="portfolio-footer">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="mailto:your.email@example.com">Email Me</a>
+      </div>
+      <p class="footer-credit">&copy; 2026 Saanvi Sundaram</p>
+    </footer>
+
+  </div>
+
+  <script>
+  const buttons = document.querySelectorAll(".filter-btn");
+  const posts = document.querySelectorAll(".blog-post-row");
+
+  buttons.forEach(button => {
+      button.addEventListener("click", () => {
+          buttons.forEach(btn => btn.classList.remove("active"));
+          button.classList.add("active");
+          const filter = button.dataset.filter;
+          posts.forEach(post => {
+              const tags = post.dataset.tags.split(" ");
+
+              if(filter === "all" || tags.includes(filter)){
+                  post.style.display = "grid";
+              } else {
+                  post.style.display = "none";
+              }
+          });
+      });
+  });
+  </script>
+</body>
+</html>

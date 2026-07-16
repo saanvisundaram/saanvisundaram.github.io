@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saanvi Sundaram - Contact</title>
+  <!-- CSS LINK -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Minimal theme additions to support the interactive poll element natively */
+    .poll-container {
+      background: var(--soft);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px;
+      margin-top: 50px;
+    }
+    .poll-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 15px 0;
+      cursor: pointer;
+      font-family: 'Space Mono', monospace;
+      color: var(--grey);
+    }
+    .poll-option input[type="radio"] {
+      accent-color: var(--green-dark);
+      transform: scale(1.15);
+      cursor: pointer;
+    }
+    .poll-btn {
+      background: var(--green-light);
+      color: var(--text);
+      border: none;
+      padding: 10px 20px;
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      margin-top: 10px;
+    }
+    .poll-btn:hover {
+      background: var(--green-dark);
+      color: var(--bg-gradient-bottom);
+    }
+    .poll-results {
+      margin-top: 20px;
+      display: none;
+    }
+    .progress-bar {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      height: 12px;
+      width: 100%;
+      margin: 6px 0 15px 0;
+      overflow: hidden;
+    }
+    .progress-fill {
+      background: var(--green-dark);
+      height: 100%;
+      width: 0%;
+      transition: width 0.6s ease;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+    <nav class="navbar">
+      <div class="nav-right">
+        <a href="website.html">about me</a>
+        <a href="pursuits.html">pursuits</a>
+        <a href="blog.html">blog</a>
+      </div>
+    </nav>
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+    <h1>Contact</h1>
+    <div class="subtitle">Ways to reach me</div>
+
+    <!-- =========================
+         CONTACT GRID
+    ========================== -->
+    <div class="contact-grid">
+      
+      <!-- Column 1: Primary Email -->
+      <div class="contact-column">
+        <h3>Email</h3>
+        <p><a href="mailto:ssundaram48@gatech.edu">ssundaram48@gatech.edu</a></p>
+      </div>
+
+      <!-- Column 2: LinkedIn -->
+      <div class="contact-column">
+        <h3>LinkedIn</h3>
+        <p><a href="https://www.linkedin.com/in/saanvi-sundaram" target="_blank" rel="noopener noreferrer">in/saanvi-sundaram</a></p>
+      </div>
+
+      <!-- Column 3: Letterboxd -->
+      <div class="contact-column">
+        <h3>Letterboxd</h3>
+        <p><a href="https://letterboxd.com/_sunv_/" target="_blank" rel="noopener noreferrer">_sunv_</a></p>
+      </div>
+
+      <!-- Column 4: Instagram -->
+      <div class="contact-column">
+        <h3>Instagram</h3>
+        <p><a href="https://www.instagram.com/_sunv_" target="_blank" rel="noopener noreferrer">@_sunv_</a></p>
+      </div>
+
+    </div>
+
+    <!-- =========================
+         INTERACTIVE POLL SECTION
+    ========================== -->
+    <div class="poll-container">
+      <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 1.4rem; margin-bottom: 8px;">Question of the Week</h3>
+      <p style="font-size: 1rem; color: var(--green-dark); margin-bottom: 15px;">Favourite Hunger Games Time-Period</p>
+      
+      <form id="portfolioPoll">
+        <label class="poll-option">
+          <input type="radio" name="poll" value="option1" required>
+          <span>Original Trilogy</span>
+        </label>
+        
+        <label class="poll-option">
+          <input type="radio" name="poll" value="option2">
+          <span>The Ballad of Songbirds and Snakes</span>
+        </label>
+        
+        <label class="poll-option">
+          <input type="radio" name="poll" value="option3">
+          <span>Sunrise on the Reaping</span>
+        </label>
+
+        <button type="submit" class="poll-btn">Submit Vote</button>
+      </form>
+
+      <!-- Results Display Block -->
+      <div id="resultsBlock" class="poll-results">
+        <h4 style="font-family: 'Space Grotesk', sans-serif; margin-bottom: 15px; color: var(--text);">Community Responses:</h4>
+        
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+            <span>Original Trilogy</span>
+            <span id="val1">0%</span>
+          </div>
+          <div class="progress-bar"><div id="bar1" class="progress-fill"></div></div>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+            <span>TBoSaS</span>
+            <span id="val2">0%</span>
+          </div>
+          <div class="progress-bar"><div id="bar2" class="progress-fill"></div></div>
+        </div>
+
+        <div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
+            <span>SotR</span>
+            <span id="val3">0%</span>
+          </div>
+          <div class="progress-bar"><div id="bar3" class="progress-fill"></div></div>
+        </div>
+        
+        <button onclick="resetPoll()" class="poll-btn" style="background: transparent; border: 1px dashed var(--green-light); font-size: 0.8rem; margin-top: 5px;">Change Vote</button>
+      </div>
+    </div>
+
+    <!-- =========================
+         PAGE QUOTE
+    ========================== -->
+    <div class="page-quote">
+      "I am a part of all that I have met" -Ulysses, Lord Alfred Tennyson.
+    </div>
+
+    <hr class="section-divider">
+
+    <!-- =========================
+         PORTFOLIO FOOTER
+    ========================== -->
+    <footer class="portfolio-footer">
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.instagram.com/yourusername" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="mailto:your.email@example.com">Email Me</a>
+      </div>
+      <p class="footer-credit">&copy; 2026 Saanvi Sundaram</p>
+    </footer>
+
+  </div>
+
+  <!-- POLL LOGIC MECHANISM -->
+  <script>
+    const form = document.getElementById('portfolioPoll');
+    const results = document.getElementById('resultsBlock');
+
+    // Simple localized counter array representing [Option1, Option2, Option3]
+    let currentVotes = JSON.parse(localStorage.getItem('pollVotes')) || [14, 22, 19];
+
+    if (localStorage.getItem('votedAlready') === 'true') {
+      showResults();
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const choice = document.querySelector('input[name="poll"]:checked').value;
+      
+      if (choice === 'option1') currentVotes[0]++;
+      if (choice === 'option2') currentVotes[1]++;
+      if (choice === 'option3') currentVotes[2]++;
+      
+      localStorage.setItem('pollVotes', JSON.stringify(currentVotes));
+      localStorage.setItem('votedAlready', 'true');
+      showResults();
+    });
+
+    function showResults() {
+      form.style.display = 'none';
+      results.style.display = 'block';
+      
+      const total = currentVotes.reduce((a, b) => a + b, 0);
+      const p1 = Math.round((currentVotes[0] / total) * 100);
+      const p2 = Math.round((currentVotes[1] / total) * 100);
+      const p3 = Math.round((currentVotes[2] / total) * 100);
+
+      document.getElementById('val1').innerText = p1 + '%';
+      document.getElementById('bar1').style.width = p1 + '%';
+      
+      document.getElementById('val2').innerText = p2 + '%';
+      document.getElementById('bar2').style.width = p2 + '%';
+      
+      document.getElementById('val3').innerText = p3 + '%';
+      document.getElementById('bar3').style.width = p3 + '%';
+    }
+
+    function resetPoll() {
+      localStorage.removeItem('votedAlready');
+      form.reset();
+      form.style.display = 'block';
+      results.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
