@@ -163,17 +163,26 @@
 
     <article class="blog-post">
 
-        <p>
-            All code discussed here can be found <a href="https://github.com/saanvisundaram/nn_experimentation/tree/main/basic_nn_and_torch/political_affiliation_nn">here.</a> 
-        </p>
+        
+        <h1>A very (very) brief history + motivation</h1>
+        
 
         <p>
             Last summer, I had one goal: to work my way to being able to code and understand language classifier. The steps before were vast, but now on the other side, I can see the importance of going through each and every one before jumping to the end. 
         </p>
 
         <p>
+            Before that, a quick sidenote. All code discussed today can be found <a href="https://github.com/saanvisundaram/nn_experimentation/tree/main/basic_nn_and_torch/political_affiliation_nn">here.</a> 
+    
+        </p>
+
+        <p>
             First in line, a neural network. It's easy to get into the weeds of what a classifier can do, should do, or won't do. But at the base of it all is how it works. Very similar to the neurons I spent most of my time looking at, neural classifiers do have one extra step- going back.
         </p>
+
+        
+        <h1>Classifier Network Architechture</h1>
+        
 
         <p>
             For supervised learning, you start with two items: features and labels. In my project, the features were information about a person: where they were from, how long were they in school, what kind of area they lived in. And then my label was their political leaning, conservative or liberal. The classifier is still a blackbox, where you input the features and somehow get the (hopefully) right label. But this blackbox is pretty easy to open up and understand.
@@ -183,6 +192,10 @@
             The features go into little nodes called 'inputs'. Think, circles. Each circle has a couple lines attached to it, called 'weights'. These weights are attached to more nodes (not inputs, just nodes), attached to more weights, to more nodes, and so on. Until the nodes don't have any more weights on the other end. These nodes are called 'output' nodes. It's where our labels will lie. 
         </p>
 
+        
+        <h1>Non-Constancy</h1>
+        
+        
         <p>
             The magic about a lot of machine learning is that there is a component of change. But our features/inputs and our labels/outputs stay constant. So, what changes?
         </p>
@@ -198,6 +211,8 @@
         <p>
             But wait. Don't we already have the label information? We do, and now we bring that out. Comparing the output the classifier gives, and the label we already have, we calculate the 'loss, which, in essence, asks us how far off we are from the right answer. The network then performs that extra step, and goes backwards. Using the information that the 'loss' gives, backpropagation allows the network to go back and adjust the weights to bring us as close as possible to the right answer.
         </p>
+
+        <h1>Iterating Through and Through Again</h1>
 
         <p>
             This was one singular iteration of training. This process is repeated over and over, depending on multiple specific 'hyperparameters' such as the size of one iteration of training, the total number of training datapoints, or the learning rate of the network. 
@@ -221,6 +236,7 @@
             alt="Initializing Weights">
 
 
+        <h1>Really Making it Work</h1>
         <p>
             Some important methods also include setting weights (for each training iteration), getting weights, computing output (see what the model gives us), accumulating gradients (to see how far the output misses the mark), and updating weights (according to what the gradients told us). Note that we don't always update weights after every input. One of the hyperparameters that can be set is how many inputs the classifier should run before updating weights. After the weights have been updated, the gradients are zeroed out again, allowing for a new set to start.
         </p>
@@ -234,8 +250,10 @@
             alt="Hyperparameters">
 
         
+        <h1>Conclusion / What Comes Next?</h1>
+        
         <p>
-            And that's just about it for a simple classifier. Up next, making things a lot easier with what python has graced us with.
+            That's just about it for what a simple classifier is. It's important to understand how it comes about. And that, is a conversation for next week.
         </p>
     </article>
 
