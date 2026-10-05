@@ -164,7 +164,7 @@
     <article class="blog-post">
 
         
-        <h1>A very (very) brief history + motivation</h1>
+        <h2>A very (very) brief history + motivation</h2>
         
 
         <p>
@@ -181,7 +181,7 @@
         </p>
 
         
-        <h1>Classifier Network Architechture</h1>
+        <h2>Classifier Network Architechture</h2>
         
 
         <p>
@@ -193,7 +193,7 @@
         </p>
 
         
-        <h1>Non-Constancy</h1>
+        <h2>Non-Constancy</h2>
         
         
         <p>
@@ -212,7 +212,7 @@
             But wait. Don't we already have the label information? We do, and now we bring that out. Comparing the output the classifier gives, and the label we already have, we calculate the 'loss, which, in essence, asks us how far off we are from the right answer. The network then performs that extra step, and goes backwards. Using the information that the 'loss' gives, backpropagation allows the network to go back and adjust the weights to bring us as close as possible to the right answer.
         </p>
 
-        <h1>Iterating Through and Through Again</h1>
+        <h2>Iterating Through and Through Again</h2>
 
         <p>
             This was one singular iteration of training. This process is repeated over and over, depending on multiple specific 'hyperparameters' such as the size of one iteration of training, the total number of training datapoints, or the learning rate of the network. 
@@ -236,7 +236,7 @@
             alt="Initializing Weights">
 
 
-        <h1>Really Making it Work</h1>
+        <h2>Really Making it Work</h2>
         <p>
             Some important methods also include setting weights (for each training iteration), getting weights, computing output (see what the model gives us), accumulating gradients (to see how far the output misses the mark), and updating weights (according to what the gradients told us). Note that we don't always update weights after every input. One of the hyperparameters that can be set is how many inputs the classifier should run before updating weights. After the weights have been updated, the gradients are zeroed out again, allowing for a new set to start.
         </p>
@@ -250,7 +250,7 @@
             alt="Hyperparameters">
 
         
-        <h1>Conclusion / What Comes Next?</h1>
+        <h2>Conclusion / What Comes Next?</h2>
         
         <p>
             That's just about it for what a simple classifier is. It's important to understand how it comes about. And that, is a conversation for next week.
